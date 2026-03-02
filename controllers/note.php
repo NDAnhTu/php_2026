@@ -10,14 +10,8 @@ if (empty($id)) {
     abort();
 }
 
-$note = $db->query("SELECT * FROM notes where id = ?", [$id])->fetch();
+$note = $db->query("SELECT * FROM notes where id = ?", [$id])->findOrFail();
 
-if (!$note) {
-    abort();
-}
-
-if ($note['user_id'] !== $current_user_id) {
-    abort(Response::HTTP_FORBIDDEN);
-}
+authorize($note['user_id'] === $current_user_id);
 
 require "views/note.view.php";
