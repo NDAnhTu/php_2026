@@ -11,6 +11,7 @@
             <?= htmlspecialchars($note['body']) ?>
         </p>
         <form method="POST" action="/notes/destroy">
+            <input type="hidden" name="_method" value="DELETE">
             <input type="hidden" name="id" value="<?= $note['id'] ?>">
             <button class="bg-red-500 text-white px-4 py-2 rounded" type="submit">
                 Delete
