@@ -7,11 +7,15 @@
         <a href="/notes" class="text-black-500 underline margin-bottom-10">
             Get back...
         </a>
-        <li>
-            <a href="note?id=<?= $note['id'] ?>" class="text-blue-500 underline">
-                <?= htmlspecialchars($note['body']) ?>
-            </a>
-        </li>
+        <p>
+            <?= htmlspecialchars($note['body']) ?>
+        </p>
+        <form method="POST" action="/notes/destroy">
+            <input type="hidden" name="id" value="<?= $note['id'] ?>">
+            <button class="bg-red-500 text-white px-4 py-2 rounded" type="submit">
+                Delete
+            </button>
+        </form>
     </div>
 </main>
 
