@@ -9,7 +9,7 @@
         </a>
         <li>
             <a href="note?id=<?= $note['id'] ?>" class="text-blue-500 underline">
-                <?= $note['body'] ?>
+                <?= htmlspecialchars($note['body']) ?>
             </a>
         </li>
     </div>

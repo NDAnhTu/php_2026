@@ -5,7 +5,7 @@
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <h1 class="text-3xl font-bold mb-6">Create Note</h1>
-        <form action="/notes/note_create" method="POST">
+        <form method="POST">
             <div class="mb-4">
                 <label for="body" class="block text-gray-700 font-bold mb-2">Note Body:</label>
                 <textarea name="body" id="body" rows="4" class="shadow appearance-none border rounded w-full py-2 px-3 text-gray-700 leading-tight focus:outline-none focus:shadow-outline"></textarea>
