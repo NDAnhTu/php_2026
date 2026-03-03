@@ -6,4 +6,4 @@ $heading = "Notes Page";
 
 $notes = $db->query("SELECT * FROM notes where user_id = ?", [1])->getAll();
 
-require "views/notes.view.php";
+require "views/notes/index.view.php";
