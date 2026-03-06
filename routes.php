@@ -12,5 +12,5 @@ $router->patch("/notes/update", "controllers/notes/update.php");
 $router->post("/notes/store", "controllers/notes/store.php");
 $router->delete("/notes/destroy", "controllers/notes/destroy.php");
 
-$router->get("/register", "controllers/register/index.php");
+$router->get("/register", "controllers/register/index.php")->only("guest");
 $router->post("/register", "controllers/register/store.php");
