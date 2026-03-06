@@ -1,9 +1,10 @@
 <?php
 
 use Core\Database;
+use Core\App;
 
-$config = require base_path("config.php");
-$db = new Database($config['database']);
+$db = App::resolve(Database::class);
+
 $current_user_id = 1;
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['id'])) {
