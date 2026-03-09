@@ -1,0 +1,16 @@
+{
+    "name": "ndanhtu/php_2026",
+    "authors": [
+        {
+            "name": "ndanhtu",
+            "email": "nguyendoanhtu14@gmail.com"
+        }
+    ],
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Core\\": "core/",
+            "Http\\": "http/"
+        }
+    }
+}
