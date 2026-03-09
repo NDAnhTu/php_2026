@@ -40,17 +40,8 @@ function abort($code = 404)
     die();
 }
 
-function login($user)
+function redirect($path)
 {
-    $_SESSION['user'] = [
-        'email' => $user['email'],
-        'name' => $user['name'],
-        'id' => $user['id']
-    ];
-}
-
-function logout()
-{
-    session_destroy();
-    session_regenerate_id(true);
+    header("Location: {$path}");
+    die();
 }

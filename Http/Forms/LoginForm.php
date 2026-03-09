@@ -23,4 +23,9 @@ class LoginForm
     {
         return $this->errors;
     }
+
+    public function addErrors($key, $value)
+    {
+        $this->errors[$key] = $value;
+    }
 }
