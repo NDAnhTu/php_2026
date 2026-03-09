@@ -48,9 +48,11 @@
                                 <span class="text-gray-300 hover:bg-white/5 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
                                     <?= $_SESSION['user']['name'] ?? $_SESSION['user']['email'] ?>
                                 </span>
-                                <a href="" class="text-gray-300 hover:bg-white/5 hover:text-white rounded-md px-3 py-2 text-sm font-medium">
-                                    Logout
-                                </a>
+                                <form action="/logout" method="POST">
+                                    <input type="hidden" name="_method" value="DELETE">
+                                    <button type="submit" class="block w-full text-left px-4 py-2 text-sm text-white focus:bg-gray-100 focus:outline-hidden">Sign
+                                        out</button>
+                                </form>
                             </div>
                         <?php else : ?>
                             <a href="/register"

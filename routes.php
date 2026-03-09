@@ -13,4 +13,8 @@ $router->post("/notes/store", "controllers/notes/store.php");
 $router->delete("/notes/destroy", "controllers/notes/destroy.php");
 
 $router->get("/register", "controllers/register/index.php")->only("guest");
-$router->post("/register", "controllers/register/store.php");
+$router->post("/register", "controllers/register/store.php")->only("guest");
+
+$router->get("/login", "controllers/auth/index.php")->only("guest");
+$router->post("/login", "controllers/auth/authenticate.php")->only("guest");
+$router->delete("/logout", "controllers/auth/logout.php")->only("auth");

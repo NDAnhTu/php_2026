@@ -4,7 +4,7 @@
 
 <main>
     <div class="mx-auto max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-        <p>hello from my home page</p>
+        <p>hello <?= $name ?? 'guest' ?> from my home page</p>
     </div>
 </main>
 

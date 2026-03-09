@@ -45,7 +45,7 @@ if ($user) {
     exit();
 } else {
     $result = $db->query('INSERT INTO users(name, admin, email, password) values(:name, :admin, :email, :password)', [
-        'name' => $email,
+        'name' => $name,
         'admin' => 0,
         'email' => $email,
         'password' => password_hash($password, PASSWORD_BCRYPT),

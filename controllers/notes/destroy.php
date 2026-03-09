@@ -5,7 +5,7 @@ use Core\App;
 
 $db = App::resolve(Database::class);
 
-$current_user_id = 1;
+$current_user_id = $_SESSION['user']['id'] ?? null;
 
 if ($_SERVER['REQUEST_METHOD'] === "POST" && isset($_POST['id'])) {
     $id = $_POST['id'];

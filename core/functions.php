@@ -39,3 +39,18 @@ function abort($code = 404)
     require base_path("views/{$code}.php");
     die();
 }
+
+function login($user)
+{
+    $_SESSION['user'] = [
+        'email' => $user['email'],
+        'name' => $user['name'],
+        'id' => $user['id']
+    ];
+}
+
+function logout()
+{
+    session_destroy();
+    session_regenerate_id(true);
+}

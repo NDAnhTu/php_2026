@@ -5,7 +5,7 @@ use Core\App;
 
 $db = App::resolve(Database::class);
 $id = $_GET['id'];
-$current_user_id = 1;
+$current_user_id = $_SESSION['user']['id'] ?? null;
 
 if (empty($id)) {
     abort();

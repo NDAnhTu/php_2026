@@ -7,8 +7,8 @@ use Core\Validator;
 $db = App::resolve(Database::class);
 $id = $_POST['id'];
 $body = $_POST['body'];
-$current_user_id = 1;
-$maxLength = 10;
+$current_user_id = $_SESSION['user']['id'] ?? null;
+$maxLength = 1000;
 
 $note = $db->query("SELECT * FROM notes where id = ?", [$id])->findOrFail();
 $note['body'] = $body;
