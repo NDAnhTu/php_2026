@@ -32,7 +32,6 @@ class Authenticator
 
     public function logout()
     {
-        session_destroy();
-        session_regenerate_id(true);
+        Session::destroy();
     }
 }
