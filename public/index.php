@@ -25,4 +25,4 @@ $method = $_POST['_method'] ?? $_SERVER['REQUEST_METHOD'];
 $router->route($uri, $method);
 
 // $_SESSION['_flash'] = [];
-Session::unflash('errors');
+Session::unflash();
