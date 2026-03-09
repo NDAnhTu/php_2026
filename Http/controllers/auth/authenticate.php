@@ -1,20 +1,16 @@
 <?php
 
 use Core\Database;
-use Core\Validator;
 use Core\App;
 
 $email = $_POST['email'];
 $password = $_POST['password'];
 $errors = [];
 $db = App::resolve(Database::class);
+$form = new Http\Forms\LoginForm();
 
-if (! Validator::email($email)) {
-    $errors['email'] = 'Please provide a valid email address.';
-}
-
-if (! Validator::string($password, 7, 255)) {
-    $errors['password'] = 'Password must be at least 7 characters long.';
+if (! $form->validate($email, $password)) {
+    $errors = $form->getErrors();
 }
 
 $user = $db->query('select * from users where email = :email', [
@@ -26,6 +22,8 @@ if ($user) {
         login($user);
         header('location: /');
         exit();
+    } else {
+        $errors['password'] = 'Wrong email or password.';
     }
 } else {
     $errors['password'] = 'Wrong email or password.';
