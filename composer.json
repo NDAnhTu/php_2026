@@ -6,7 +6,9 @@
             "email": "nguyendoanhtu14@gmail.com"
         }
     ],
-    "require": {},
+    "require": {
+        "illuminate/collections": "^12.53"
+    },
     "autoload": {
         "psr-4": {
             "Core\\": "core/",
